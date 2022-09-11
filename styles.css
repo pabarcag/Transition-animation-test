@@ -1,0 +1,42 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #333;
+}
+
+
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: solid white 1px;
+    width: 800px;
+    height: 600px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    transition: transform 1s ease-out 2s, background-color 5s eas;
+
+
+
+}
+
+.box:hover{
+    background-color: aqua;
+    transform: translateX(600px);
+}
