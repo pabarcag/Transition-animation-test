@@ -6,6 +6,8 @@
 
 body{
     display: flex;
+    flex-direction: column;
+    gap: 3em;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -14,29 +16,44 @@ body{
 
 
 
-.container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border: solid white 1px;
-    width: 800px;
-    height: 600px;
-}
-
-.box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.button{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 1rem;
     width: 200px;
-    height: 200px;
-    background-color: lightcoral;
-    transition: transform 1s ease-out 2s, background-color 5s eas;
 
+}
+
+
+.button--hack{
+    transform: translateZ(0);
+}
+
+.button--hack::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transform: scaleX(0);
+    opacity: 0;
+    z-index: -1;
+    transform-origin: left;
+    transition: transform 0.3s;
 
 
 }
 
-.box:hover{
-    background-color: aqua;
-    transform: translateX(600px);
+.button--hack:hover::after{
+    transform: scaleX(1);
+    opacity: 1;
+
 }
+
+
